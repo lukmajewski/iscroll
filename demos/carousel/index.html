@@ -25,6 +25,14 @@ function loaded () {
 			resize: false
 		}
 	});
+
+	var currentPage = document.getElementById('current-page');
+
+	currentPage.innerHTML = myScroll.currentPage.pageX;
+
+	myScroll.on('scrollEnd', function(){
+		currentPage.innerHTML = myScroll.currentPage.pageX;
+	});
 }
 
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
@@ -142,6 +150,11 @@ body {
 	background: #777;
 }
 
+.page-info {
+	text-align: center;
+}
+
+
 </style>
 </head>
 <body onload="loaded()">
@@ -168,6 +181,8 @@ body {
 <div id="indicator">
 	<div id="dotty"></div>
 </div>
+
+<p class="page-info">currentPage: <span id="current-page"></span></p>
 
 </body>
 </html>

@@ -274,7 +274,7 @@ IScroll.prototype = {
 		this.endTime = utils.getTime();
 
 		// reset if we are outside of the boundaries
-		if ( this.resetPosition(this.options.bounceTime) ) {
+		if ( !this.options.snap && this.resetPosition(this.options.bounceTime) ) {
 			return;
 		}
 
