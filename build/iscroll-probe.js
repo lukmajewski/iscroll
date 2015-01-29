@@ -1572,7 +1572,7 @@ IScroll.prototype = {
 				break;
 			case 'orientationchange':
 			case 'resize':
-				this._resize();
+				//this._resize();
 				break;
 			case 'transitionend':
 			case 'webkitTransitionEnd':
